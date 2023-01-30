@@ -17,6 +17,7 @@ jobs:
     steps:
 
       - uses: actions/checkout@v3
+      
 
       - name: Rotate-secret
         uses: Debabrata1980/rotate-database-secret@master
