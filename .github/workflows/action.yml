@@ -6,7 +6,7 @@ name: Auto rotate workflow
 on:
 
   push:
-    branches: master
+    branches: testsecret
 
 jobs:
 
