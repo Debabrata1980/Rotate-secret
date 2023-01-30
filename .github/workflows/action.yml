@@ -1,0 +1,26 @@
+# This workflow is to rotate the database secret automatically based on the cron expr
+
+name: Auto rotate workflow
+
+
+on:
+
+  push:
+    branches: master
+
+jobs:
+
+  build-and-deploy-infra:
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Rotate-secret
+        uses: Debabrata1980/rotate-database-secret@master
+        with:
+          secret-id: Testsecret
+          lambda: arn:aws:lambda:us-east-1:273641968769:function:mysql-rotate-lambda
+
